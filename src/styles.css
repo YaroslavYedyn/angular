@@ -7,7 +7,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body{
+  font-family: 'Montserrat', sans-serif;
+}
 a:-webkit-any-link {
   color:unset;
   text-decoration: none;
