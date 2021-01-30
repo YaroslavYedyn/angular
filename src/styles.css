@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  border: none;
+  border-radius: 0;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:-webkit-any-link {
+  color:unset;
+  text-decoration: none;
+}
+
+.wrapper{
+  width: 80%;
+  height: 100%;
+}

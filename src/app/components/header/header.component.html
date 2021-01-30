@@ -1,1 +1,41 @@
-<p>header works!</p>
+<header>
+  <div [classList]="['wrapper']">
+    <div [classList]="['top-nav']">
+      <div [classList]="['top-left']">
+        <a>+7809658123</a>
+        <a>email@email.com</a>
+        <a>Lviv,Ukraine</a>
+      </div>
+      <div [classList]="['top-right']">
+        <a>{{currency}}</a>
+        <a >My Account</a>
+      </div>
+    </div>
+    <div [classList]="['center-nav']">
+      <p [classList]="['title']" [routerLink]="['']">Myapp<a [classList]="['point']" ></a></p>
+      <div [classList]="['search']">
+        <form>
+          <select [classList]="['categories']">
+            <option [classList]="['option']" value="">All Categories</option>
+            <option [classList]="['option']" value="">All</option>
+            <option [classList]="['option']" value="">Categories</option>
+            <option [classList]="['option']" value="">All Categories</option>
+            <option [classList]="['option']" value="">All Categories</option>
+          </select>
+          <input [classList]="['base-input']" placeholder="Search here">
+          <button [classList]="['btn-src']">Search</button>
+        </form>
+      </div>
+      <div [classList]="['interaction']">
+        <a>
+          <img style="width:20px;height: 20px;" [src]="iconWishlist" alt="">
+          Your Wishlist
+        </a>
+        <a [routerLink]="['cart']" >
+          <img style="width:20px;height: 20px;" [src]="iconCart" alt="">
+          Your Cart&#9660;
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
