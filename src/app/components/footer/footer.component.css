@@ -1,0 +1,37 @@
+footer{
+  position: absolute;
+  bottom: 0;
+  color: white;
+  width: 100% ;
+  height:content-box;
+  background: #15151d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ftr{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height:content-box;
+}
+.ftr-clm{
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  margin:0 10px;
+  width: 25%;
+  height:content-box;
+}
+.ftr-clm a{
+  margin:4px 0;
+  font-size: 14px;
+}
+.title-footer{
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.ftr-txt{
+}
