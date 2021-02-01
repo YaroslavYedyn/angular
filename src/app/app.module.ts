@@ -11,6 +11,8 @@ import {ThankyouComponent} from './components/thankyou/thankyou.component';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
+import {AuthModule} from '@auth0/auth0-angular';
+import {environment as evn} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,14 @@ import {AppRoutingModule} from './app-routing.module';
     CartComponent,
     CheckoutComponent,
     ProductComponent,
-    ThankyouComponent
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule.forRoot(
+      evn.auth
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
