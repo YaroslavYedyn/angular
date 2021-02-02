@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from './components/home/home.component';
 import {CartComponent} from './components/cart/cart.component';
 import {ProductComponent} from './components/product/product.component';
 import {ThankyouComponent} from './components/thankyou/thankyou.component';
@@ -11,7 +10,7 @@ import {AuthComponent} from './components/auth/auth/auth.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
   },
   {
     path: 'cart', component: CartComponent
@@ -31,8 +30,11 @@ const routes: Routes = [
   // }
   {
     path: 'auth', component: AuthComponent,
-      canActivate: [AuthGuard],
-  }
+    canActivate: [AuthGuard],
+  },
+  // {
+  //   path:'item/:id',component:
+  // }
 ];
 
 @NgModule({

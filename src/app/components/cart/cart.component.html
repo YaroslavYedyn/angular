@@ -1,1 +1,7 @@
-<p>cart works!</p>
+<div *ngIf="products.length!==0">
+  <div *ngFor="let item of products">
+    {{item.title}}
+    <button (click)="singleDelete(item.id)">delete</button>
+  </div>
+  <button (click)="removeAll()">remove all</button>
+</div>
