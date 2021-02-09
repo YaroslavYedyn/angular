@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Product} from '../../models/product';
+import {CartService} from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -9,21 +10,21 @@ import {Product} from '../../models/product';
 export class CartComponent implements OnInit {
   products: Product[];
 
-  constructor() {
+  constructor(private cartService: CartService) {
   }
 
   ngOnInit(): void {
-    let localCart = localStorage.getItem('localCart');
+    const localCart = localStorage.getItem('localCart');
     this.products = JSON.parse(localCart);
   }
 
   removeAll(): void {
     localStorage.removeItem('localCart');
     this.products = [];
+    this.cartService.setNewState();
   }
 
   singleDelete(itemId: number): void {
-    console.log(itemId);
     if (localStorage.getItem('localCart')) {
       this.products = JSON.parse(localStorage.getItem('localCart'));
       for (let i = 0; i < this.products.length; i++) {
@@ -32,6 +33,7 @@ export class CartComponent implements OnInit {
           localStorage.setItem('localCart', JSON.stringify(this.products));
         }
       }
+      this.cartService.setNewState();
     }
   }
 }

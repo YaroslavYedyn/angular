@@ -13,6 +13,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {AuthModule} from '@auth0/auth0-angular';
 import {environment as evn} from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BadgeComponent } from './components/header/components/badge/badge.component';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -23,15 +26,18 @@ import {HttpClientModule} from '@angular/common/http';
     CheckoutComponent,
     ProductComponent,
     ThankyouComponent,
+    BadgeComponent,
   ],
-  imports: [
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    AuthModule.forRoot(
-      evn.auth
-    )
-  ],
+    imports: [
+        HttpClientModule,
+        BrowserModule,
+        AppRoutingModule,
+        AuthModule.forRoot(
+            evn.auth
+        ),
+        NoopAnimationsModule,
+        MatBadgeModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

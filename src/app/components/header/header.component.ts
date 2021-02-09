@@ -3,6 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import iconCart from './img/shopping_cart-white-18dp.svg';
 // @ts-ignore
 import iconWishlist from './img/favorite_border-white-18dp.svg';
+import {MatBadgeModule} from '@angular/material/badge';
+
 
 @Component({
   selector: 'app-header',
@@ -21,3 +23,4 @@ export class HeaderComponent implements OnInit {
   }
 
 }
+
